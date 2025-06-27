@@ -28,87 +28,62 @@ This is a **MERN stack fitness app** with:
 
 ### 1️⃣ Clone the Repository
 
-```bash
-git clone https://your-repo-url.git
-cd fitness-app
-2️⃣ Backend Setup
-Navigate to the backend folder:
 
-bash
-Copy
-Edit
+- cd fitness-app
+2️⃣ Backend Setup
+- Navigate to the backend folder:
+
 cd backend
 Install dependencies:
 
-bash
-Copy
-Edit
 npm install
 Create a .env file:
 
-env
-Copy
-Edit
+**env**
+
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/fitness_app
 JWT_SECRET=your_jwt_secret_key
 Run the server:
 
-bash
-Copy
-Edit
 npm run dev
 3️⃣ Frontend Setup
 Open a new terminal and navigate to the frontend folder:
 
-bash
-Copy
-Edit
 cd fitness-app
 Install dependencies:
 
-bash
-Copy
-Edit
 npm install
 Run the frontend:
 
-bash
-Copy
-Edit
-npm start
-✨ Features Overview
-🔑 Authentication
-Admin & Member authentication with JWT
 
-Roles enforced:
+- npm start
+- ✨ Features Overview
+- 🔑 Authentication
+- Admin & Member authentication with JWT
 
-Admin: Can manage everything
+**Roles enforced:**
 
-Member: Limited to viewing their data
+- Admin: Can manage everything
 
-👤 Admin Registration & Login
-⚠️ Important:
-There is no public endpoint to register an Admin.
-You must create the first Admin manually in the database.
+ -Member: Limited to viewing their data
 
-➡️ How to Create an Admin Manually:
-Open MongoDB Compass or shell.
+- 👤 Admin Registration & Login
+- ⚠️ Important:
+- There is no public endpoint to register an Admin.
+- You must create the first Admin manually in the database.
 
-Hash a password using Node.js REPL:
+- **➡️ How to Create an Admin Manually:**
+- Open MongoDB Compass or shell.
 
-javascript
-Copy
-Edit
+- Hash a password using Node.js REPL:
+
 const bcrypt = require("bcryptjs");
 bcrypt.hashSync("yourpassword", 10);
 Copy the hashed password.
 
-Insert a new user:
+**Insert a new user:**
 
-javascript
-Copy
-Edit
 db.users.insertOne({
   name: "Admin User",
   email: "admin@example.com",
@@ -117,115 +92,97 @@ db.users.insertOne({
   assignedWorkoutPlans: [],
   selectedClasses: []
 })
-Log in as Admin at:
 
-bash
-Copy
-Edit
+**Log in as Admin at:**
+
 http://localhost:3000/admin/login
 🧑‍💼 Member Registration & Login
 Members can self-register:
 
-bash
-Copy
-Edit
 http://localhost:3000/register
 Or Admins can create members in the Admin Dashboard.
 
-Members log in at:
+**Members log in at:**
 
-bash
-Copy
-Edit
 http://localhost:3000/login
-🗂️ Admin Dashboard
-Accessible after admin login:
+- 🗂️ Admin Dashboard
+- Accessible after admin login:
 
-bash
-Copy
-Edit
 http://localhost:3000/admin/dashboard
-Features:
 
-✅ Manage Members (Create, Edit, Delete)
+**Features:**
 
-✅ Manage Classes (Create, Edit, Delete)
+- ✅ Manage Members (Create, Edit, Delete)
 
-✅ Upload Workout Plans and assign them to members
+- ✅ Manage Classes (Create, Edit, Delete)
 
-🏠 Member Dashboard
-Accessible after member login:
+- ✅ Upload Workout Plans and assign them to members
 
-bash
-Copy
-Edit
+**🏠 Member Dashboard**
+- Accessible after member login:
+
 http://localhost:3000/dashboard
-Features:
+**Features:**
 
 ✅ View available classes
 
 ✅ View assigned workout plans (PDFs)
 
-📂 File Uploads
-Uploaded workout plans are stored in:
+**📂 File Uploads**
+- Uploaded workout plans are stored in:
 
-bash
-Copy
-Edit
+
 /backend/uploads
-They are accessible via URLs:
+- They are accessible via URLs:
 
-bash
-Copy
-Edit
 http://localhost:5000/uploads/filename.pdf
-✅ API Overview
-Here is a quick reference:
+**✅ API Overview**
+- Here is a quick reference:
 
-Auth
-POST /api/auth/register - Member registration
+**Auth**
+- POST /api/auth/register - Member registration
 
-POST /api/auth/login - Login for Admin or Member
+- POST /api/auth/login - Login for Admin or Member
 
-Classes
-GET /api/classes - List all classes (public)
+**Classes**
+- GET /api/classes - List all classes (public)
 
-POST /api/classes - Create class (Admin only)
+- POST /api/classes - Create class (Admin only)
 
-PUT /api/classes/:id - Update class (Admin only)
+- PUT /api/classes/:id - Update class (Admin only)
 
-DELETE /api/classes/:id - Delete class (Admin only)
+- DELETE /api/classes/:id - Delete class (Admin only)
 
-Members
-GET /api/members - List all members (Admin only)
+**Members**
+- GET /api/members - List all members (Admin only)
 
-POST /api/members - Create member (Admin only)
+- POST /api/members - Create member (Admin only)
 
-PUT /api/members/:id - Update member (Admin only)
+- PUT /api/members/:id - Update member (Admin only)
 
-DELETE /api/members/:id - Delete member (Admin only)
+- DELETE /api/members/:id - Delete member (Admin only)
 
-Workout Plans
-GET /api/plans/:memberId - Get member's plans
+**Workout Plans**
+- GET /api/plans/:memberId - Get member's plans
 
-GET /api/plans - List all plans (Admin only)
+- GET /api/plans - List all plans (Admin only)
 
-POST /api/plans - Upload a plan (Admin only)
+- POST /api/plans - Upload a plan (Admin only)
 
-📝 Notes
-✅ You must have MongoDB running locally (mongodb://localhost:27017) or adjust MONGO_URI in .env.
+- 📝 Notes
+- ✅ You must have MongoDB running locally (mongodb://localhost:27017) or adjust MONGO_URI in .env.
 
-✅ For production deployment:
+**✅ For production deployment:**
 
-Use environment variables
+- Use environment variables
 
-Serve frontend via Express or a static host
+- Serve frontend via Express or a static host
 
-Set proper CORS policies
+- Set proper CORS policies
 
-✅ Default ports:
+**✅ Default ports:**
 
-Backend: 5000
+- Backend: 5000
 
-Frontend: 5173
+- Frontend: 5173
 
