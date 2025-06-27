@@ -43,7 +43,7 @@ Create a .env file:
 
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/fitness_app
-JWT_SECRET=your_jwt_secret_key
+JWT_SECRET=jwt_secret_key
 Run the server:
 
 npm run dev
@@ -95,20 +95,20 @@ db.users.insertOne({
 
 **Log in as Admin at:**
 
-http://localhost:3000/admin/login
+http://localhost:5173/admin/login
 🧑‍💼 Member Registration & Login
 Members can self-register:
 
-http://localhost:3000/register
+http://localhost:5173/register
 Or Admins can create members in the Admin Dashboard.
 
 **Members log in at:**
 
-http://localhost:3000/login
+http://localhost:5173/login
 - 🗂️ Admin Dashboard
 - Accessible after admin login:
 
-http://localhost:3000/admin/dashboard
+http://localhost:5173/admin/dashboard
 
 **Features:**
 
@@ -121,7 +121,7 @@ http://localhost:3000/admin/dashboard
 **🏠 Member Dashboard**
 - Accessible after member login:
 
-http://localhost:3000/dashboard
+http://localhost:5173/dashboard
 **Features:**
 
 ✅ View available classes
